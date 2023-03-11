@@ -1,0 +1,25 @@
+.meme__container img{
+  /* box model */
+  display: none;
+}
+
+.meme__title i {
+  /* box model */
+  display: inline-block;
+}
+
+.meme input:checked + .meme__container img {
+  /* box model */
+  display: block;
+}
+
+.meme input:checked + .meme__container i, 
+.meme__title:hover i {
+  /* transformations */
+  transform: rotate(90deg)
+}
+
+.meme__title:hover + img {
+  /* box model */
+  display: block;
+}
