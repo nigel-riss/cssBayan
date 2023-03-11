@@ -1,4 +1,4 @@
-.meme__container img{
+.meme__image{
   /* box model */
   display: none;
 }
@@ -8,13 +8,12 @@
   display: inline-block;
 }
 
-.meme input:checked + .meme__container img {
+.meme input:checked + .meme__container .meme__image {
   /* box model */
   display: block;
 }
 
-.meme input:checked + .meme__container i, 
-.meme__title:hover i {
+.meme input:checked + .meme__container i { 
   /* transformations */
   transform: rotate(90deg)
 }
