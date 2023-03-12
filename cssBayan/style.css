@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+:root {
+  --white: #ffffff;
+  --champagne: #f1ddbf;
+  --gray: #525e75;
+  --cambridge: #78938a;
+  --grass: #92ba92;
+}
+
+body {
+  /* box model */
+  padding: 1rem;
+
+  /* typography */
+  color: var(--gray);
+  font-family: 'Rampart One', cursive;
+
+  /* visual */
+  background-color: var(--champagne);
+}
+
+.header {
+  /* box model */
+  margin-bottom: 2rem;
+}
+
+.header__title {
+  /* typography */
+  line-height: 1;
+  font-size: 2em;
+}
+
+.header__subtitle {
+  /* typography */
+  color: var(--cambridge);
+  font-size: 1em;
+}
+
+.meme {
+  /* box model */
+  display: block;
+
+  /* border */
+  border-bottom: 0.125rem solid var(--cambridge);
+}
+
+.meme:active {
+  /* visual */
+  opacity: 0.5;
+}
+
+.meme input {
+  /* box model */
+  display: none;
+}
+
+.meme__image{
+  /* box model */
+  display: block;
+  margin: 0 1rem;
+  max-height: 0;
+
+  /* visual */
+  overflow: hidden;
+  transition: all 0.25s ease-out;
+}
+
+.meme__image img {
+  /* box model */
+  margin: 0 auto;
+  max-height: 100%;
+
+  /* border */
+  border: 0.5rem solid var(--white);
+
+  /* transformations */
+  transform: scale(0);
+
+  /* visual */
+  transition: all 0.25s ease-out;
+  transition-delay: 0.25s;
+}
+
+.meme__title {
+  /* box model */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* typography */
+  font-size: 1.5em;
+}
+
+.meme__title i {
+  /* box model */
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+
+  /* border */
+  border-radius: 50%;
+
+  /* visual */
+  transition: all 0.25s ease-out;
+  background-image: url(icons/plus.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+.meme input:checked + .meme__container .meme__image {
+  /* box model */
+  max-height: 50rem;
+  margin: 1rem;
+  
+  /* visual */
+  transition: all 0.25s ease-out;
+  transition-delay: 0;
+}
+
+.meme input:checked + .meme__container .meme__image img {
+  /* transformations */
+  transform: scale(1);
+
+  /* visual */
+  transition: all 0.25s ease-out;
+}
+
+.meme input:checked + .meme__container .meme__title {
+  /* typography */
+  color: var(--cambridge);
+}
+
+.meme input:checked + .meme__container i {
+  /* visual */
+  transition: all 0.25s ease-out;
+
+  /* transformations */
+  transform: rotate(225deg);
+}
+
+@media (min-width: 320px) {
+  .wrapper {
+    /* box model */
+    width: 16rem;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 820px) {
+  body {
+    /* typography */
+    font-size: 1.25rem;
+  }
+
+  .wrapper {
+    /* box model */
+    width: 42rem;
+  }
+
+  .header__title {
+    /* typography */
+    font-size: 3em;
+  }
+
+  .meme__image img {
+    /* box model */
+    max-width: 32rem;
+  }
+}
+
+@media (min-width: 1920px) {
+  body {
+    /* typography */
+    font-size: 1.75rem;
+  }
+
+  .wrapper {
+    /* box model */
+    width: 60rem;
+  }
+}
+
+@media (hover:hover) {
+  .meme__title i {
+    /* box model */
+    display: none;
+  }
+
+  .meme:hover * {
+    /* visual */
+    cursor: pointer;
+  }
+
+  .memes:hover .meme__title {
+    /* typography */
+    color: var(--cambridge);
+  }
+
+  .memes:hover .meme__title i {
+    /* box model */
+    display: inline-block;
+  }
+
+  .meme:hover i {
+    /* visual */
+    transition: all 0.25s ease-out;
+  
+    /* transformations */
+    transform: rotate(225deg);
+  }
+
+  .meme:hover .meme__image {
+    /* box model */
+    max-height: 50rem;
+    margin: 1rem;
+    
+    /* visual */
+    transition: all 0.25s ease-out;
+    transition-delay: 0;
+  }
+
+  .meme:hover .meme__image img {
+    /* transformations */
+    transform: scale(1);
+  
+    /* visual */
+    transition: all 0.25s ease-out;
+  }
+}
