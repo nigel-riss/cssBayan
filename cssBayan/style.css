@@ -28,7 +28,7 @@ body {
 .header__title {
   /* typography */
   line-height: 1;
-  font-size: 3em;
+  font-size: 2em;
 }
 
 .header__subtitle {
@@ -158,57 +158,15 @@ body {
     /* box model */
     width: 42rem;
   }
-  
-  .memes:hover .meme__title {
+
+  .header__title {
     /* typography */
-    color: var(--cambridge);
-  }
-
-  .memes:hover .meme__title i {
-    /* box model */
-    display: inline-block;
-  }
-
-  .meme__title i {
-    /* box model */
-    display: none;
-  }
-
-  .meme:hover * {
-    /* visual */
-    cursor: pointer;
+    font-size: 3em;
   }
 
   .meme__image img {
     /* box model */
     max-width: 32rem;
-  }
-
-
-  .meme:hover .meme__image {
-    /* box model */
-    max-height: 50rem;
-    margin: 1rem;
-    
-    /* visual */
-    transition: all 0.25s ease-out;
-    transition-delay: 0;
-  }
-  
-  .meme:hover .meme__image img {
-    /* transformations */
-    transform: scale(1);
-  
-    /* visual */
-    transition: all 0.25s ease-out;
-  }
-  
-  .meme:hover i {
-    /* visual */
-    transition: all 0.25s ease-out;
-  
-    /* transformations */
-    transform: rotate(225deg);
   }
 }
 
@@ -221,5 +179,53 @@ body {
   .wrapper {
     /* box model */
     width: 60rem;
+  }
+}
+
+@media (hover:hover) {
+  .meme__title i {
+    /* box model */
+    display: none;
+  }
+
+  .meme:hover * {
+    /* visual */
+    cursor: pointer;
+  }
+
+  .memes:hover .meme__title {
+    /* typography */
+    color: var(--cambridge);
+  }
+
+  .memes:hover .meme__title i {
+    /* box model */
+    display: inline-block;
+  }
+
+  .meme:hover i {
+    /* visual */
+    transition: all 0.25s ease-out;
+  
+    /* transformations */
+    transform: rotate(225deg);
+  }
+
+  .meme:hover .meme__image {
+    /* box model */
+    max-height: 50rem;
+    margin: 1rem;
+    
+    /* visual */
+    transition: all 0.25s ease-out;
+    transition-delay: 0;
+  }
+
+  .meme:hover .meme__image img {
+    /* transformations */
+    transform: scale(1);
+  
+    /* visual */
+    transition: all 0.25s ease-out;
   }
 }
